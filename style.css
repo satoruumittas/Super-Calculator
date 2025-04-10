@@ -1,0 +1,254 @@
+
+/* Cleaned and unified CSS using only .theme-* system */
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.calculator {
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#display {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #bbb;
+}
+
+#modeToggle,
+#themeSelect {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+#themeSelect {
+  right: 120px;
+}
+
+/* Theme Styles */
+body.theme-light {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+body.theme-light .calculator {
+  background-color: white;
+}
+
+body.theme-light #display {
+  background-color: #fff;
+  color: #000;
+}
+
+body.theme-light button {
+  background-color: #eee;
+  color: #000;
+}
+
+body.theme-dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.theme-dark .calculator {
+  background-color: #1e1e1e;
+}
+
+body.theme-dark #display {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+body.theme-dark button {
+  background-color: #333;
+  color: white;
+}
+
+body.theme-dark button:hover {
+  background-color: #555;
+}
+
+body.theme-neon {
+  background: linear-gradient(135deg, #00f0ff, #ff00f7);
+  color: white;
+}
+
+body.theme-neon .calculator {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.theme-neon #display {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+body.theme-neon button {
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid #0ff;
+}
+
+body.theme-galaxy {
+  background: radial-gradient(circle at top left, #1a2a6c, #b21f1f, #fdbb2d);
+  color: white;
+}
+
+body.theme-galaxy .calculator {
+  background: rgba(0, 0, 50, 0.6);
+}
+
+body.theme-galaxy #display {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #8ab4f8;
+  font-weight: bold;
+  text-shadow: 0 0 5px #8ab4f8, 0 0 10px #6f9cfb;
+  font-size: 24px;
+  padding: 10px;
+  text-align: right;
+  border-radius: 10px;
+  border: 1px solid #8ab4f8;
+  box-shadow: inset 0 0 10px rgba(138, 180, 248, 0.3);
+}
+
+body.theme-galaxy button {
+  color: #fff;
+  background: rgba(0, 0, 50, 0.6);
+  border: 1px solid #8ab4f8;
+  text-shadow: 0 0 3px #8ab4f8, 0 0 6px #6f9cfb;
+}
+/* 🎨 Stylish Dropdown Selector */
+#themeSelector {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #888;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Match dark background */
+body.theme-dark #themeSelector,
+body.theme-neon #themeSelector,
+body.theme-galaxy #themeSelector {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #aaa;
+}
+
+/* Add glowing effect for neon theme */
+body.theme-neon #themeSelector {
+  border: 1px solid #0ff;
+  text-shadow: 0 0 5px #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* Add galaxy vibes */
+body.theme-galaxy #themeSelector {
+  border: 1px solid #8ab4f8;
+  text-shadow: 0 0 5px #8ab4f8;
+  box-shadow: 0 0 10px #8ab4f8;
+}
+/* 🔥 AKSHCALC Supreme Title */
+#siteTitle {
+  font-family: 'Orbitron', sans-serif; /* futuristic font */
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  margin: 30px 0 10px 0;
+  color: #111;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 2s ease-in-out infinite alternate;
+  transition: all 0.5s ease;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.2);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 255, 0, 0.7), 0 0 30px rgba(255, 0, 255, 0.4);
+  }
+}
+
+/* 🌙 DARK MODE */
+body.theme-dark #siteTitle {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+-webkit-background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🌈 NEON MODE */
+body.theme-neon #siteTitle {
+  background: none;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+/* 🌌 GALAXY MODE */
+body.theme-galaxy #siteTitle {
+  background: none;
+  color: #8ab4f8;
+  text-shadow: 0 0 10px #8ab4f8, 0 0 20px #6f9cfb, 0 0 40px #8ab4f8;
+}
